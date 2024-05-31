@@ -41,7 +41,6 @@ class ModalNewSound(ui.Modal):
           
           # https://zvukogram.com/index.php?r=site/download&id=43754
           # https://alexbruni.ru/afx/sound_file/zvuk-kak-tebe-moya-popa-37.mp3
-          # https://soundeffectpro.com/store/k9bju.mp3
           
           values = inter.text_values
           sender = SendRequest(values['link'])

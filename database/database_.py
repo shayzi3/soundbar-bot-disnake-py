@@ -40,8 +40,16 @@ class DatabaseCommands:
                          return False
                
                cursor.append(data)
-               print(cursor)
                
                await db.execute("UPDATE server{} SET panel = ?".format(guild.id), [json.dumps(cursor)])
                await db.commit()
+               
+               
+     async def get_panel(self, guild: Guild) -> list[list[str]]:
+          async with aiosqlite.connect('data/discord.db') as db:
+               cursor = await db.execute("SELECT panel FROM server{}".format(guild.id))
+               cursor = await cursor.fetchone()
+               cursor: list[list[str]] = json.loads(cursor[0])
+               
+               return cursor
                

@@ -16,21 +16,16 @@ from Scripts.memes import get_url
 
 
 class FastSoundCommands:
-     
-     async def playing_sound_one(self, voice: VoiceClient) -> None:
+          
+     async def playing_sound_panel(self, voice: VoiceClient, url: str) -> None:
           FFMPEG_OPTIONS = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5', 'options': '-vn'}
-          get_ = await get_url()
           
           if not voice.is_playing():
-               source = FFmpegPCMAudio(source=get_[2], executable='ffm/ffmpeg.exe', **FFMPEG_OPTIONS)
+               source = FFmpegPCMAudio(source=url, executable='ffm/ffmpeg.exe', **FFMPEG_OPTIONS)
                voice.play(source)
                
           else:
                return None
-          
-     
-     async def playing_sound_random(self) -> None:
-          ... 
           
           
      async def find_member_in_voice(

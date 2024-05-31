@@ -8,7 +8,10 @@ async def read_the_file(name: str = None, arg: str = None) -> str:
           read_ = read_.split('___')
      
      if not arg:
-          return read_[0].replace('_', name)
+          return read_[0].replace('__', name)
      
-     elif arg == 'audio':
+     elif arg == 'panel':
           return read_[1]
+     
+     elif arg == 'new_sound':
+          return read_[2]

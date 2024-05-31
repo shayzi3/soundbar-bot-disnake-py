@@ -6,8 +6,6 @@ from disnake import Intents
 from loguru import logger
 
 
-# https://zvukogram.com/
-# https://alexbruni.ru/afx/sound/sounds-from-tiktok
 
 load_dotenv()
 token = os.getenv('TOKEN')
@@ -23,6 +21,8 @@ async def on_ready() -> None:
      logger.info('Бот запущен.')
 
      bot.load_extensions('Cogs')
+     
+     
      
 if __name__ == '__main__':
      bot.run(token)
