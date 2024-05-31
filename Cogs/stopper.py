@@ -36,6 +36,7 @@ class PausePlayCog(commands.Cog):
           elif find == False:
                await inter.send('Бот не находится в голосовом канале.', ephemeral=True, delete_after=15)
                
+               
           
           
 def setup(bot: commands.Bot) -> None:

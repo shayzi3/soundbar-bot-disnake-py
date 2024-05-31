@@ -27,3 +27,21 @@ class DatabaseCommands:
                     logger.debug(f'Table for server: {guild.name}')
                     return True
           return False
+     
+     
+     async def new_sound_save(self, guild: Guild, data: list[str]) -> None:
+          async with aiosqlite.connect('data/discord.db') as db:
+               cursor = await db.execute("SELECT panel FROM server{}".format(guild.id))
+               cursor = await cursor.fetchone()
+               cursor: list[str] = json.loads(cursor[0])
+               
+               for link_ in cursor:
+                    if link_[1] == data[1]:
+                         return False
+               
+               cursor.append(data)
+               print(cursor)
+               
+               await db.execute("UPDATE server{} SET panel = ?".format(guild.id), [json.dumps(cursor)])
+               await db.commit()
+               

@@ -7,6 +7,7 @@ from loguru import logger
 
 
 # https://zvukogram.com/
+# https://alexbruni.ru/afx/sound/sounds-from-tiktok
 
 load_dotenv()
 token = os.getenv('TOKEN')
