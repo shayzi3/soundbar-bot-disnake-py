@@ -23,3 +23,13 @@ links_to_eblan = [
      'https://media.tenor.com/bSYJdDtdaSMAAAAM/dum-dum-stupid.gif',
      'https://media.tenor.com/OqLVXU-6r3UAAAAM/dumb-dumb-and-dumber.gif'
 ]
+
+a = [1, 2, 3, 4]
+
+p = a.index(3)
+a.remove(3)
+
+a[0] = 13
+a.insert(p, 15)
+
+print(a)

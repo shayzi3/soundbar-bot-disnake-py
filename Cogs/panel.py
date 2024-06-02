@@ -55,7 +55,7 @@ class PanelCog(commands.Cog):
           url = inter.component.custom_id
           
           
-          if inter.component.label in ['/panel', '/new_sound', 'Add Bot', 'Zvukogram', 'Alexbruni']:
+          if inter.component.label in ['/panel', '/new_sound', 'Add Bot', 'Zvukogram', 'Alexbruni', 'Удалить звук', 'Изменить название']:
                return None
           
           emb = Embed(

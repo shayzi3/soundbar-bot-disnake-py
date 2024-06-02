@@ -52,4 +52,10 @@ class DatabaseCommands:
                cursor: list[list[str]] = json.loads(cursor[0])
                
                return cursor
+          
+          
+     async def panel_save(self, guild: Guild, panel: list[list[str]]) -> None:
+          async with aiosqlite.connect('data/discord.db') as db:
+               await db.execute("UPDATE server{} SET panel = ?".format(guild.id), [json.dumps(panel)])
+               await db.commit()
                
